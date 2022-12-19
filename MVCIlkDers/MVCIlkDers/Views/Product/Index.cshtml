@@ -1,0 +1,29 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@model List<MVCIlkDers.Models.Product>
+<h3>VIEWBAGLE NESNE GÖNDERİMİ </h3>
+<ul>
+
+
+@* DİNAMİK OLARAK VERİLERİMİ TAŞIYORUM. *@
+    @foreach (var product in ViewBag.products as List<MVCIlkDers.Models.Product>)
+    {
+    <li>
+        @product.product_Name
+    </li>
+    }
+    <h3>VIEWDATA KULLANIMI  </h3>
+    @* OBJECTS OLARAK GETİRİP UNBOXING YAPTIK *@
+    @foreach (var product in ViewData["products"] as List<MVCIlkDers.Models.Product>)
+    {
+        <li>
+            @product.product_Name
+        </li>
+    }
+
+@{
+}
+
+</ul>
